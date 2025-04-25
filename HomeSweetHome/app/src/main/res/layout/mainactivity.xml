@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar with TextView inside -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#ebe2d3"
+        android:elevation="4dp"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentTop="true">
+
+        <!-- TextView inside the Toolbar -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_vertical"
+            android:text="Find Your Dream Home"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Search bar -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="16dp"
+        android:hint="Search for homes"
+        android:padding="12dp"
+        android:background="@drawable/button_background"
+        android:drawableLeft="@drawable/baseline_manage_search_24" />
+
+    <!-- RecyclerView for home listings -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/search_bar"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginTop="16dp"
+        android:padding="16dp" />
+
+    <!-- Bottom navigation or action buttons -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="#ebe2d3">
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_home_24"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="HOME" />
+
+        <ImageButton
+            android:id="@+id/btn_favorite"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_favorite_24"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="FAVORITE" />
+
+        <ImageButton
+            android:id="@+id/login_b"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_person_pin_24"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="PROFILE" />
+    </LinearLayout>
+</RelativeLayout>
